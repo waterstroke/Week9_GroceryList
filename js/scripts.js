@@ -2,13 +2,15 @@ $(document).ready(function() {
 
   $("#blanks form").submit(function(event) {
     var groceries = ["item1","item2","item3","item4","item5","item6"];
-    
-
+    //Where does this go? the sort function
+     // var alphabet = groceries.sort("");
       groceries.forEach(function(grocery) {
         var userInput = $("input#" + grocery).val();
+        var allCaps = userInput.toUpperCase("");
+
         console.log(grocery);
           // groceries.sort();
-        $("." + grocery).text(userInput)
+        $("." + grocery).text(allCaps)
      });
 
 
