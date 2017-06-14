@@ -1,20 +1,28 @@
 $(document).ready(function() {
 
   $("#blanks form").submit(function(event) {
-      var groceries = ["item1","item2","item3","item4","item5","item6"];
+    var groceries = ["item1","item2","item3","item4","item5","item6"];
+    
 
       groceries.forEach(function(grocery) {
         var userInput = $("input#" + grocery).val();
         console.log(grocery);
+          // groceries.sort();
         $("." + grocery).text(userInput)
      });
 
-     $("#list").show();
+
+         $("form").hide();
+
+         $("#list").show();
+
 
     event.preventDefault();
   });
-});
+ });
 
+// var groceries = ["item1","item2","item3","item4","item5","item6"];
+// var uppers = groceries.map(function(x) { return x.toUpperCase(); });
 
 
 
