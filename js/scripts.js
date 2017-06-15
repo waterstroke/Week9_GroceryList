@@ -2,17 +2,23 @@ $(document).ready(function() {
 
   $("#blanks form").submit(function(event) {
     var groceries = ["item1","item2","item3","item4","item5","item6"];
+    var groceriesInput = [];
     //Where does this go? the sort function
      // var alphabet = groceries.sort("");
       groceries.forEach(function(grocery) {
         var userInput = $("input#" + grocery).val();
         var allCaps = userInput.toUpperCase("");
+        groceriesInput.push(allCaps);
 
-        console.log(grocery);
+        // console.log(grocery);
           // groceries.sort();
-        $("." + grocery).text(allCaps)
+        // $("." + grocery).text(allCaps)
      });
-
+     groceriesInput.sort();
+     $(".item1").text(groceriesInput);
+     groceriesInput.forEach(function(grocery) {
+       $("#list").append("<li>" + grocery + "</li>");
+     });
 
          $("form").hide();
 
